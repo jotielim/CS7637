@@ -24,6 +24,8 @@ def main():
             # You may also write your own problems.
 
     for file in os.listdir("Problems"): # One problem set per folder in /Problems/
+        if file.startswith("."):
+            continue
         newSet = ProblemSet(file)       # Each problem set is named after the folder in /Problems/
         sets.append(newSet)
         for problem in os.listdir("Problems" + os.sep + file):  # Each file in the problem set folder becomes a problem in that set.
